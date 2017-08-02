@@ -7,6 +7,7 @@
 
 <page:angular-temaplate>
     <jsp:body>
+        <c:url value="/" var="home" />
         <!-- Page Content -->
         <div class="container">
 
@@ -29,7 +30,7 @@
 
                 var app = angular.module('myApp', ['ngResource']);
                 app.controller('JSONController', function($scope, $http) {
-                    $http.get('/rest/posts/13').
+                    $http.get('${home}rest/posts/13').
                     success(function(data, status, headers, config) {
                         $scope.post = data;
                         console.log(data);
@@ -48,7 +49,7 @@
                     };
 
                     //$http
-                    $http.post('/rest/savePost', post).
+                    $http.post('${home}rest/savePost', post).
                     success(function(data, status, headers, config) {
                         $scope.post = data;
                         console.log(data);
@@ -61,7 +62,7 @@
                 //$resource
                 //$resource configuration object is Posts used for CRUD
                 app.factory("Posts", function($resource) {
-                    return $resource("/rest/delPosts/:id");
+                    return $resource("${home}rest/delPosts/:id");
                 });
 
                 //$resource
