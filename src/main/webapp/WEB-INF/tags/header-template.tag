@@ -37,7 +37,6 @@
 <c:url value="/angularhttpresource.html" var="angularhttpresource" />
 <c:url value="/customdirective.html" var="customdirective" />
 
-
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
