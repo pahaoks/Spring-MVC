@@ -21,17 +21,20 @@
 
     <!-- XML Bean Definitions -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${jdbc.hsqldb.driverClass}" />
-        <property name="url" value="${jdbc.hsqldb.url}" />
-        <property name="username" value="${jdbc.hsqldb.username}" />
-        <property name="password" value="${jdbc.hsqldb.password}" />
+        <property name="driverClassName" value="${jdbc.driverClass}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <!-- initialize Embedded DataSource. Встроенная база данных-->
+    <!-- initialize Embedded DataSource. Встроенная база данных
     <jdbc:initialize-database data-source="dataSource">
+        Поменял на Mysql
         <jdbc:script location="classpath:dbschema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>
-    </jdbc:initialize-database>
+        <jdbc:script location="classpath:dbschema-mysql.sql"/>
+        <jdbc:script location="classpath:test-data-mysql.sql"/>
+    </jdbc:initialize-database>-->
 
     <!-- Java Mail Configuration -->
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
@@ -77,7 +80,8 @@
         </property>
         <property name="jpaProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>

@@ -68,6 +68,7 @@
           <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.2.11" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.1.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:6.0.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">

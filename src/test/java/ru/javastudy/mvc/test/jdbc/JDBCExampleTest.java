@@ -1,6 +1,7 @@
 package ru.javastudy.mvc.test.jdbc;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,7 @@ public class JDBCExampleTest {
 
     //JDBC TEMPLATE DELETE TEST EXAMPLE
     @Test
+    @Ignore
     public void deleteUSERTest() {
         Assert.assertTrue(jdbcExample.deleteUSER(5));
     }
