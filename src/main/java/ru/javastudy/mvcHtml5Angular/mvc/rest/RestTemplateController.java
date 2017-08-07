@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import ru.javastudy.mvcHtml5Angular.mvc.rest.model.RestPostsModel;
-import ru.javastudy.mvcHtml5Angular.mvc.rest.model.RestUserModel;
+import ru.javastudy.mvcHtml5Angular.mvc.rest.model.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,6 +26,12 @@ public class RestTemplateController {
     private RestTemplate restTemplate;
 
     private final String EXTERNAL_REST_URL = "http://jsonplaceholder.typicode.com"; //free JSON services
+
+    @RequestMapping(value = "/rest/myrequest/{param}", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
+    public String myRequest(@PathVariable("param") String param) {
+        System.out.println("RestTemplateController getRestPostsById is called");
+        return "Говно которое я сделал сам: " + param;
+    }
 
     @RequestMapping(value = "/rest/users", method = RequestMethod.GET)
     public List<RestUserModel> getRestUsers() {
@@ -96,5 +102,6 @@ public class RestTemplateController {
         System.out.println("savePost postJSON.getBody(): " + postJSON.getBody());
         System.out.println("@RestTemplateControllerExample savePost is called");
     }
+
 }
 

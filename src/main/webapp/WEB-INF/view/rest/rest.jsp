@@ -12,6 +12,7 @@
         <c:url value="/rest/delPosts/5" var="deletePostById"/>
         <c:url value="/rest/getAllDBLogsXML" var="getAllDBLogsXML"/>
         <c:url value="/rest/getAllDBLogsJSON" var="getAllDBLogsJSON"/>
+        <c:url value="/rest/myrequest/hello" var="myRequest" />
         <!-- Page Content -->
         <div class="container">
 
@@ -43,6 +44,7 @@
                         <a href="${deletePostById}" class="list-group-item">Delete Post By Id </a>
                         <a href="${getAllDBLogsJSON}" class="list-group-item">Get DBLogs (JSON)</a>
                         <a href="${getAllDBLogsXML}" class="list-group-item">Get DBLogs (XML)</a>
+                        <a href="${myRequest}" class="list-group-item">MyRequest</a>
                     </div>
                 </div>
 
