@@ -7,14 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import ru.javastudy.mvcHtml5Angular.javaconfig.ApplicationConfig;
+import ru.javastudy.mvcHtml5Angular.javaconfig.MVCConfig;
 import ru.javastudy.mvcHtml5Angular.mvc.bean.SampleBean;
 import ru.javastudy.mvcHtml5Angular.mvc.bean.User;
 
 /**
  * Created for JavaStudy.ru on 04.03.2016.
  */
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(locations = {"classpath:mvc-config.xml", "classpath:application-context.xml"})
+@WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:mvc-config.xml", "classpath:application-context.xml"})
+@ContextConfiguration(classes={ApplicationConfig.class, MVCConfig.class})
 public class SampleTestBean {
 
 //Comment  this 'bean class="org.springframework.web.servlet.view.XmlViewResolver" ' in mvc-context.xml

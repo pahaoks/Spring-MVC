@@ -7,6 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import ru.javastudy.mvcHtml5Angular.javaconfig.ApplicationConfig;
+import ru.javastudy.mvcHtml5Angular.javaconfig.MVCConfig;
 import ru.javastudy.mvcHtml5Angular.mvc.bean.DBLog;
 import ru.javastudy.mvcHtml5Angular.mvc.bean.User;
 import ru.javastudy.mvcHtml5Angular.mvc.jdbc.JDBCExample;
@@ -16,8 +19,10 @@ import java.util.List;
 /**
  * Created for JavaStudy.ru on 24.02.2016.
  */
+@WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:mvc-config.xml", "classpath:application-context.xml"})
+//@ContextConfiguration(locations = {"classpath:mvc-config.xml", "classpath:application-context.xml"})
+@ContextConfiguration(classes={ApplicationConfig.class, MVCConfig.class})
 public class JDBCExampleTest {
 
 //IMPORTANT - DISABLE THIS <bean class="org.springframework.web.servlet.view.XmlViewResolver"> in mvc-config.xml
